@@ -2,15 +2,28 @@
   text-align: center;
 }
 
-
-ul {
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.header {
+  background-image: url('./components/Immagine1.jpg');
+  background-size: cover;
 }
+
+.title {
+  font-size: 150px;
+  text-align: center;
+  padding: 100px;
+}
+
+.desc {
+  font-size: 20px;
+}
+
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-item {
+  flex-grow: 0;
 }

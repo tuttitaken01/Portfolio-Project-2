@@ -42,8 +42,8 @@ export default function Reviews() {
                 {filteredReviews.map((review) => {
                     return (
                         <div key={review.review_id} className="grid-item">
-                            <h3>{review.title}</h3>
-                            <img src={review.review_img_url} height='100px' alt={review.review_id} />
+                            <h4>{review.title}</h4>
+                            <img src={review.review_img_url} height='200px' alt={review.review_id} />
                             <p><IconButton aria-label='up'><ThumbUp fontSize='small' color='success' /></IconButton>{review.votes}<IconButton aria-label="down"><ThumbDown fontSize='small' color='error' /></IconButton></p> 
                             <p><Link to='/reviews/comments'>Comments count: {review.comment_count}</Link></p>
 

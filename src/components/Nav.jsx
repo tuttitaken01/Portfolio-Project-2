@@ -5,6 +5,7 @@ export default function Nav() {
         <nav>
             <Link to="/">Home</Link>
             <Link to='/reviews'>All Reviews</Link>
+            <Link to='/sign-in'>Login/Sign Up</Link>
         </nav>
     )
 }
