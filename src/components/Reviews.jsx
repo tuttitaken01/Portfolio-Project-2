@@ -62,8 +62,6 @@ export default function Reviews() {
                             <Link key={review.review_id} to={`/reviews/${review.review_id}`}><h4>{review.title}</h4>
                             <img src={review.review_img_url} height='200px' alt={review.review_id} /> </Link>
                             <p><IconButton aria-label='up'><ThumbUp fontSize='small' color='success' /></IconButton>{review.votes}<IconButton aria-label="down"><ThumbDown fontSize='small' color='error' /></IconButton></p> 
-                            <p><Link key={review.review_id} to={`/reviews/${review.review_id}/comments`}>Comments count: {review.comment_count}</Link></p>
-
                         </div>
                     )
                 })}
