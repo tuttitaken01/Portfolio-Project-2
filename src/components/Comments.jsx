@@ -31,7 +31,7 @@ export default function Comments() {
 
     return (
         <div>
-            {loading && <div className="loading">Loading...⏳</div>}
+            {loading && <div className="loading-c">Loading...⏳</div>}
             <h3>Comments ({comments.length})</h3>
             {msg && <p>{msg}</p>}
             <ul className='comments'>

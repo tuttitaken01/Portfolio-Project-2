@@ -41,6 +41,11 @@
   margin-top: 100px;
 }
 
+.loading-c {
+  font-size: 20px;
+  text-align: center;
+}
+
 .grid-container {
   display: grid;
   gap: 60px;
@@ -54,7 +59,7 @@
 .comments {
   margin: auto;
   text-align: justify;
-  width: 400px;
+  width: 700px;
   list-style-type: none;
   background: #e8e8e8;
   padding: 5px;

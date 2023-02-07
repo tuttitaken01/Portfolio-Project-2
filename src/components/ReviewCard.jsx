@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { ThumbDown, ThumbUp } from '@mui/icons-material';
+import Comments from './Comments';
 
 export default function SingleRev() {
     const [ review, setReview ] = useState({});
@@ -39,6 +40,7 @@ export default function SingleRev() {
                 <ThumbDown fontSize='small' color='error' />
                 </IconButton>
             </p> 
+            <Comments />            
         </div>
         
     )
