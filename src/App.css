@@ -34,6 +34,12 @@
   font-size: 20px;
 }
 
+.loading {
+  font-size: 100px;
+  color: rgb(77, 107, 173);
+  text-align: center;
+  margin-top: 100px;
+}
 
 .grid-container {
   display: grid;
@@ -44,3 +50,27 @@
 .grid-item {
   flex-grow: 0;
 }
+
+.comments {
+  margin: auto;
+  text-align: justify;
+  width: 400px;
+  list-style-type: none;
+  background: #e8e8e8;
+  padding: 5px;
+}
+
+ul li {
+  background: #ffffff;
+  margin: 20px;
+  padding: 10px;
+}
+
+.author {
+  color:rgb(237, 130, 0);
+}
+
+.votes {
+  text-align: right !important;
+}
+
