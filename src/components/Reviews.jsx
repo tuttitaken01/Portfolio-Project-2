@@ -30,20 +30,6 @@ export default function Reviews() {
         getAllRev();
     }, []);
 
-        /*axios.get('https://gameview.onrender.com/api/reviews')
-        .then(({data: {reviews}}) => {
-            setReviews(reviews)
-        });
-    }, []);
-
-    useEffect(() => {
-        axios.get('https://gameview.onrender.com/api/categories')
-        .then(res => {
-            let getCats = res.data.categories.map(category => category.slug)
-            setCategories(['All', ...getCats]);
-        });
-    }, []); */
-
     const filteredReviews = selCat === 'All' ? reviews : reviews.filter( review => review.category === selCat);
 
     return (
