@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { IconButton } from '@mui/material';
-import { ThumbDown, ThumbUp } from '@mui/icons-material';
 import Comments from './Comments';
+import VoteUpDown from './Votes';
 
 export default function SingleRev() {
     const [ review, setReview ] = useState({});
@@ -34,12 +33,7 @@ export default function SingleRev() {
             <h5>{review.created_at}</h5>
             <img src={review.review_img_url} alt="game" width="600px"/>
             <p>{review.review_body}</p>
-            <p><IconButton aria-label='up'>
-                <ThumbUp fontSize='small' color='success' />
-                </IconButton>{review.votes}<IconButton aria-label="down">
-                <ThumbDown fontSize='small' color='error' />
-                </IconButton>
-            </p> 
+            <VoteUpDown /> 
             <Comments />            
         </div>
         
