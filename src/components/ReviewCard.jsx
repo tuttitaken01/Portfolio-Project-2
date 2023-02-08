@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Comments from './Comments';
 import VoteUpDown from './Votes';
+import PostForm from './AddCom';
+
 
 export default function SingleRev() {
     const [ review, setReview ] = useState({});
@@ -34,7 +36,9 @@ export default function SingleRev() {
             <img src={review.review_img_url} alt="game" width="600px"/>
             <p>{review.review_body}</p>
             <VoteUpDown /> 
-            <Comments />            
+            <h3>Comments ({review.comment_count})</h3>
+            <PostForm />
+            <Comments />           
         </div>
         
     )

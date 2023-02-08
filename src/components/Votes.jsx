@@ -43,7 +43,7 @@ export default function VoteUpDown() {
             {err ? <p style={{ color: 'red' }}>{err}</p> : null}
             <p><IconButton aria-label='up' onClick={() => handleInc()}>
                 <ThumbUp fontSize='small' color='success'/>
-                </IconButton>{votes}<IconButton aria-label="down" onClick={() => handleDec()}>
+                </IconButton><strong>{votes}</strong><IconButton aria-label="down" onClick={() => handleDec()}>
                 <ThumbDown fontSize='small' color='error' />
                 </IconButton>
             </p> 
