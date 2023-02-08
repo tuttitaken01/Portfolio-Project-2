@@ -17,7 +17,7 @@ export default function VoteUpDown() {
         })        
     }, [reviewId]);
 
-    const handleClick = () => {
+    const handleInc = () => {
         setVotes((currentCount) => currentCount + 1);
         axios.patch(`https://gameview.onrender.com/api/reviews/${reviewId}`, {
             inc_votes : 1
@@ -41,7 +41,7 @@ export default function VoteUpDown() {
     return (
         <section>
             {err ? <p style={{ color: 'red' }}>{err}</p> : null}
-            <p><IconButton aria-label='up' onClick={() => handleClick()}>
+            <p><IconButton aria-label='up' onClick={() => handleInc()}>
                 <ThumbUp fontSize='small' color='success'/>
                 </IconButton>{votes}<IconButton aria-label="down" onClick={() => handleDec()}>
                 <ThumbDown fontSize='small' color='error' />
