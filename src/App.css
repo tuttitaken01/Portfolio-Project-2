@@ -95,7 +95,7 @@ input[type=text] {
   border-radius: 10px;
 }
 
-select {
+.form-name {
   padding: 10px;
   border-top: 0;
   border-left: 0;

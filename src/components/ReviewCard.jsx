@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import Comments from './Comments';
 import { IconButton } from '@mui/material';
 import { ThumbDown, ThumbUp } from '@mui/icons-material';
-import PostForm from './AddCom';
 
 
 export default function SingleRev() {
@@ -69,7 +68,6 @@ export default function SingleRev() {
                 </IconButton>
             </p></section>
             <h3>Comments ({review.comment_count})</h3>
-            <PostForm />
             <Comments />           
         </div>
         
