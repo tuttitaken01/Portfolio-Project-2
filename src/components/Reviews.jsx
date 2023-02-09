@@ -22,8 +22,9 @@ export default function Reviews() {
                 const category = params.get('category');
                 if(category) {
                     url += `?category=${category}`;
+                } else {
+                    url += `?sortOn=${sortOn}&order=${order}`;
                 }
-                url += `?sortOn=${sortOn}&order=${order}`
                 const response = await axios.get(url);
                 let reviews = response.data.reviews;
                 reviews.map(review => (
