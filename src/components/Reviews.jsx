@@ -1,48 +1,41 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { ThumbUp } from '@mui/icons-material';
 
 
 export default function Reviews() {
     const [ reviews, setReviews ] = useState([]);
-    const [ categories, setCategories ] = useState([]);
+    const location = useLocation();
     const [ loading, setLoading ] = useState(false);
-    const [ selCat, setSelCat ] = useState ('All');
+
 
     useEffect(() => {
-        const getAllRev = async () => {
+        const getReviews = async () => {
             setLoading(true);
             try {
-                const [ allRev, allCat ] = await Promise.all([
-                    axios.get('https://gameview.onrender.com/api/reviews'),
-                    axios.get('https://gameview.onrender.com/api/categories'),
-                ]);
-                let revs = allRev.data.reviews;
-                let cats = allCat.data.categories.map(category => category.slug);
-                setReviews(revs);
-                setCategories(['All', ...cats]);
+                let url = 'https://gameview.onrender.com/api/reviews';
+                const params = new URLSearchParams(location.search);
+                const category = params.get('category');
+                if(category) {
+                    url += `?category=${category}`;
+                }
+                const response = await axios.get(url);
+                setReviews(response.data.reviews);
+            } catch(err) {
+                console.error(err);
             } finally {
                 setLoading(false);
             }
         }
-        getAllRev();
-    }, []);
-
-    const filteredReviews = selCat === 'All' ? reviews : reviews.filter( review => review.category === selCat);
+        getReviews();
+    }, [location.search]);
 
     return (
         <section>
-            {loading && <div className="loading">Loading...⏳</div>}
-            <select value={selCat} onChange={e => setSelCat(e.target.value)}>
-                {categories.map(category => (
-                    <option value={category}>{category}</option>
-                ))}
-            </select>
-
             <div className="grid-container">
-                {filteredReviews.map((review) => {
+                {reviews.map((review) => {
                     return (
                         <div key={review.review_id} className="grid-item">
                             <Link key={review.review_id} to={`/reviews/${review.review_id}`}><h4>{review.title}</h4>
@@ -52,6 +45,7 @@ export default function Reviews() {
                     )
                 })}
             </div>
+            {loading && <div className="loading">Loading...⏳</div>}
         </section>
     )
 }
