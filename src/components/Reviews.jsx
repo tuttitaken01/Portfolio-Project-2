@@ -21,7 +21,7 @@ export default function Reviews() {
                 const params = new URLSearchParams(location.search);
                 const category = params.get('category');
                 if(category) {
-                    url += `?category=${category}`;
+                    url += `?category=${category}&sortOn=${sortOn}&order=${order}`;
                 } else {
                     url += `?sortOn=${sortOn}&order=${order}`;
                 }
