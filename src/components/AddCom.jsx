@@ -21,25 +21,23 @@ export default function PostForm({ setComments }) {
     }, [avatar]);
 
     const handleSubmit = (e) => {
+        const newComment = { username: avatar, body: text};
         e.preventDefault();
         setMsg('Comment posted successfully!');
         setError(null);
         setText('');
-        axios.post(`https:gameview.onrender.com/api/reviews/${reviewId}/comments`, {
-            username: avatar, body: text,
-        })
-        .then(({data}) => {
-            return data.comment[0];
-        })
-        .then((commentFromApi) => {
-            setComments((currComments) => {
-                return [commentFromApi, ...currComments];
-            })
-        })
+        setComments(currComments => {
+            return [newComment, ...currComments]})
+        axios.post(`https:gameview.onrender.com/api/reviews/${reviewId}/comments`, newComment)
         .catch(err => {
             console.log(err);
             setError('Failed to post comment. Try again');
             setMsg(null);
+            setComments(currComments => {
+                currComments.splice(0,1)
+                console.log(currComments);
+                return [...currComments]
+            })
         })
     }
 
