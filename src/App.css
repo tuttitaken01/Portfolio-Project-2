@@ -24,6 +24,11 @@
   z-index: -1;
 }
 
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .title {
   font-size: 150px;
   text-align: center;
