@@ -7,6 +7,8 @@ import { ThumbUp } from '@mui/icons-material';
 
 export default function Reviews() {
     const [ reviews, setReviews ] = useState([]);
+    const [ sortOn, setSortBy ] = useState('created_at');
+    const [ order, setOrder ] = useState('DESC');
     const location = useLocation();
     const [ loading, setLoading ] = useState(false);
 
@@ -21,8 +23,13 @@ export default function Reviews() {
                 if(category) {
                     url += `?category=${category}`;
                 }
+                url += `?sortOn=${sortOn}&order=${order}`
                 const response = await axios.get(url);
-                setReviews(response.data.reviews);
+                let reviews = response.data.reviews;
+                reviews.map(review => (
+                    Math.floor(parseInt(review.comment_count))
+                ))
+                setReviews(reviews);
             } catch(err) {
                 console.error(err);
             } finally {
@@ -30,10 +37,27 @@ export default function Reviews() {
             }
         }
         getReviews();
-    }, [location.search]);
+    }, [location.search, sortOn, order]);
 
     return (
         <section>
+            <p className='sortby'>Sort by:
+            <div className="radio">
+            <label>
+                <input type="radio" name="sortBy" value="created_at" checked={sortOn === 'created_at'} onChange={e => setSortBy(e.target.value)} />date
+            </label>
+            <label>
+                <input type="radio" name="sortBy" value="votes" checked={sortOn === 'votes'} onChange={e => setSortBy(e.target.value)} />votes
+            </label>
+            <label>
+                <input type="radio" name="order" value="ASC" checked={order === 'ASC'} onChange={e => setOrder(e.target.value)} />UP
+            </label>
+            <label>
+                <input type="radio" name="order" value="DESC" checked={order === 'DESC'} onChange={e => setOrder(e.target.value)} />DOWN
+            </label>
+                </div>
+                </p>
+                
             <div className="grid-container">
                 {reviews.map((review) => {
                     return (
