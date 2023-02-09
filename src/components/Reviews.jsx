@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
-import { ThumbDown, ThumbUp } from '@mui/icons-material';
+import { ThumbUp } from '@mui/icons-material';
 
 
 export default function Reviews() {
     const [ reviews, setReviews ] = useState([]);
     const [ categories, setCategories ] = useState([]);
     const [ loading, setLoading ] = useState(false);
-    const [ selCat, setSelCat ] = useState ('All')
+    const [ selCat, setSelCat ] = useState ('All');
 
     useEffect(() => {
         const getAllRev = async () => {
@@ -47,7 +47,7 @@ export default function Reviews() {
                         <div key={review.review_id} className="grid-item">
                             <Link key={review.review_id} to={`/reviews/${review.review_id}`}><h4>{review.title}</h4>
                             <img src={review.review_img_url} height='200px' alt={review.review_id} /> </Link>
-                            <p><IconButton aria-label='up'><ThumbUp fontSize='small' color='success' /></IconButton>{review.votes}<IconButton aria-label="down"><ThumbDown fontSize='small' color='error' /></IconButton></p> 
+                            <p>{review.votes}<IconButton aria-label='up'><ThumbUp fontSize='small' color='success' /></IconButton></p> 
                         </div>
                     )
                 })}

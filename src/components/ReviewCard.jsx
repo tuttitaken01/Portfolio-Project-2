@@ -5,6 +5,7 @@ import Comments from './Comments';
 import { IconButton } from '@mui/material';
 import { ThumbDown, ThumbUp } from '@mui/icons-material';
 
+
 export default function SingleRev() {
     const [ review, setReview ] = useState({});
     const [ votes, setVotes ] = useState(0);
@@ -66,7 +67,8 @@ export default function SingleRev() {
                 <ThumbDown fontSize='small' color='error' />
                 </IconButton>
             </p></section>
-            <Comments />            
+            <h3>Comments ({review.comment_count})</h3>
+            <Comments />           
         </div>
         
     )

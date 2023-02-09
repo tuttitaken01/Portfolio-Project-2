@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { ArrowCircleDown, ArrowCircleUp } from '@mui/icons-material';
+import PostForm from './AddCom';
 
 export default function Comments() {
     const [ comments, setComments ] = useState([]);
@@ -31,8 +32,8 @@ export default function Comments() {
 
     return (
         <div>
+            <PostForm setComments={setComments} />
             {loading && <div className="loading-c">Loading...⏳</div>}
-            <h3>Comments ({comments.length})</h3>
             {msg && <p>{msg}</p>}
             <ul className='comments'>
                 {comments.map(c => (
