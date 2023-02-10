@@ -29,4 +29,7 @@ NodeJS: v.19.1.0
 
 🪐[Backend repo](https://github.com/tuttitaken01/Portfolio-Project). Repository of the previously built API.
 
-♟️[Hosted API link](https://gameview.onrender.com). API documentation.
+🎳[Hosted API link](https://gameview.onrender.com). API documentation.
+
+## Notes
+Normally it's not a nice feeling to reach a non-existent page. However, I do encourage you to do so - a present will be waiting there for you 😎.
