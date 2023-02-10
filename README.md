@@ -24,4 +24,7 @@ npm start
 ## Version Requirements
 NodeJS: v.19.1.0
 
-This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :) <3
+## Other useful links
+[Trello board](https://trello.com/b/zsHCFrmK) of the front-end architecture. A list of functionalities that have been implemented and considerations in the design and styling of the website.
+[Backend repo](https://github.com/tuttitaken01/Portfolio-Project). Repository of the previously built API.
+[hosted API link](https://gameview.onrender.com). API documentation.
