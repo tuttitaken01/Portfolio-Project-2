@@ -1,9 +1,13 @@
-# Northcoders Games
+# House of Games App
 
-Northcoders Games is a social games content rating, and discussion website.
+## Hosted Version
+https://gameview-licorice.netlify.app/
 
-Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add comments about an review. Users can also add comments about a review.
+## Background
+This is a board games content rating and discussion website.
+Game reviews are divided into categories. Each review has user curated ratings and can be up or down voted. Users can also add comments about an review.
 
+The intention of this front-end programme is to build on the previously built back-end API - accessible [here](https://gameview.onrender.com).
 This sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
 
 ## Kanban
