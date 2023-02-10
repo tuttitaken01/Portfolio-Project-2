@@ -1,7 +1,3 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { UNSPLASH_API_URL, UNSPLASH_API_KEY } from './api';
-
 export default function ErrorPage() {
     /*const [ img, setImg ] = useState([]);
     
