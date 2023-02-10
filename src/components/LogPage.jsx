@@ -36,7 +36,7 @@ export default function Login() {
                 <img
                 src={loggedUser.avatar_url}
                 alt={loggedUser.username}
-                height="50px"
+                height="100px"
                 />
             </section>
         ) : (

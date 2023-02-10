@@ -8,19 +8,19 @@ export default function Nav() {
     const { loggedUser, setLoggedUser } = useContext(UserContext);
     return (
         <nav>
-            <Link to='/'><IconButton aria-label="home"><Home /></IconButton></Link>
-            <Link to='/reviews'>All Reviews</Link>
-            <Link to='/reviews?category=deck-building'>Deck Building</Link>
-            <Link to='/reviews?category=dexterity'>Dexterity</Link>
-            <Link to='/reviews?category=engine-building'>Engine Building</Link>
-            <Link to='/reviews?category=hidden-roles'>Hidden Roles</Link>
-            <Link to='/reviews?category=push-your-luck'>Push Your Luck</Link>
-            <Link to='/reviews?category=roll-and-write'>Roll and Write</Link>
-            <Link to='/reviews?category=strategy'>Strategy</Link>
-            <Link to='login'>Login</Link>
+            <Link to='/' className="home"><IconButton aria-label="home"><Home /></IconButton></Link>
+            <Link to='/reviews' className='nav-links'>All Reviews</Link>
+            <Link to='/reviews?category=deck-building' className='nav-links'>Deck Building</Link>
+            <Link to='/reviews?category=dexterity' className='nav-links'>Dexterity</Link>
+            <Link to='/reviews?category=engine-building' className='nav-links'>Engine Building</Link>
+            <Link to='/reviews?category=hidden-roles' className='nav-links'>Hidden Roles</Link>
+            <Link to='/reviews?category=push-your-luck' className='nav-links'>Push Your Luck</Link>
+            <Link to='/reviews?category=roll-and-write' className='nav-links'>Roll and Write</Link>
+            <Link to='/reviews?category=strategy' className='nav-links'>Strategy</Link>
+            <Link to='login' className='nav-links'>Login</Link>
             <div className="user-profile">
-            <p><strong>{loggedUser?.username}</strong></p>
             <img src={loggedUser?.avatar_url} alt={loggedUser?.username} height="30px" />
+            <p><strong>{loggedUser?.username}</strong></p>
             </div>
         </nav>
     )

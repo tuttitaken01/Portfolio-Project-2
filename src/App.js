@@ -6,7 +6,7 @@ import SingleRev from './components/ReviewCard';
 import Login from './components/LogPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { UserProvider } from './components/UserContext';
-
+import ErrorPage from './components/ErrorPg';
 
 
 function App() {
@@ -16,10 +16,11 @@ function App() {
         <UserProvider>
         <Nav />
         <Routes>
-          <Route path="/" element={<Header />}></Route>
-          <Route path="/reviews" element={<Reviews />}></Route>
-          <Route path="/reviews/:reviewId" element={<SingleRev />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+          <Route path="/" element={<Header />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/reviews/:reviewId" element={<SingleRev />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </UserProvider>
       </div>
