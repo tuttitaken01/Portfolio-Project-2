@@ -127,3 +127,11 @@ form {
 button[type=submit] {
   margin-left: 15px;
 }
+
+.sortby {
+  text-align: left;
+}
+
+.radio {
+  display: flex;
+}
