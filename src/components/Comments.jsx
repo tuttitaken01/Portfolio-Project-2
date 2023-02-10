@@ -53,7 +53,7 @@ export default function Comments() {
             <ul className='comments'>
                 {comments.map(c => (
                     <li key={c.comment_id} className="comitem">
-                        <h4 className="author">{c.author}</h4>
+                        <h3 className="author">{c.author}</h3>
                         <p>{c.body}</p>                        
                         <p className="votes"><IconButton aria-label='up'>
                             <ArrowCircleUp fontSize='small' color='success' />
