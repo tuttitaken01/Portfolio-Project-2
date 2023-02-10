@@ -5,7 +5,7 @@ import { Home } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
 export default function Nav() {
-    const { loggedUser, setLoggedUser } = useContext(UserContext);
+    const { loggedUser } = useContext(UserContext);
     return (
         <nav>
             <Link to='/' className="home"><IconButton aria-label="home"><Home /></IconButton></Link>

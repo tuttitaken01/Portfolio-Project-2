@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 import { Send } from '@mui/icons-material';
 
 export default function PostForm({ setComments }) {
-    const { loggedUser, setLoggedUser } = useContext(UserContext);
+    const { loggedUser } = useContext(UserContext);
     const [ text, setText ] = useState('');
     const [ msg, setMsg ] = useState(null);
     const [ error, setError ] = useState(null);

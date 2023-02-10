@@ -9,7 +9,7 @@ import { UserContext } from './UserContext';
 
 export default function Comments() {
     const [ comments, setComments ] = useState([]);
-    const { loggedUser, setLoggedUser } = useContext(UserContext);
+    const { loggedUser } = useContext(UserContext);
     const [ errMsg, setErrMsg ] = useState(null);
     const [ okMsg, setOkMsg ] = useState(null);
     const [ loading, setLoading ] = useState(false);
