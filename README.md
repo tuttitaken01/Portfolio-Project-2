@@ -26,5 +26,7 @@ NodeJS: v.19.1.0
 
 ## Other useful links
 [Trello board](https://trello.com/b/zsHCFrmK) of the front-end architecture. A list of functionalities that have been implemented and considerations in the design and styling of the website.
+
 [Backend repo](https://github.com/tuttitaken01/Portfolio-Project). Repository of the previously built API.
+
 [hosted API link](https://gameview.onrender.com). API documentation.
